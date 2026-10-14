@@ -1,0 +1,342 @@
+[
+  {
+    "giornata": 1,
+    "data": "27/09/2026",
+    "ora": "18:00",
+    "casa": "S4 Energia Vicenza",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "Palasport Città di Vicenza",
+    "risultato": "73–84",
+    "cronaca_url": "https://www.leonessa-brescia.it/news/report-vicenza-brescia-serie-b-nazionale-2026-2027/"
+  },
+  {
+    "giornata": 2,
+    "data": "04/10/2026",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Moncada Energy Agrigento",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": "85–71",
+    "cronaca_url": "https://www.leonessa-brescia.it/news/report-brescia-agrigento-serie-b-nazionale-2026-2027/"
+  },
+  {
+    "giornata": 3,
+    "data": "11/10/2026",
+    "ora": "18:00",
+    "casa": "Fiorenzuola Bees",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "PalArquato",
+    "risultato": "74–82",
+    "cronaca_url": "https://www.leonessa-brescia.it/news/report-fiorenzuola-brescia-serie-b-nazionale-2026-2027/"
+  },
+  {
+    "giornata": 4,
+    "data": "18/10/2026",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Rimadesio Desio",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 5,
+    "data": "24/10/2026",
+    "ora": "20:30",
+    "casa": "SAE Scientifica-Soevis Legnano Knights",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "Soevis Arena - Castellanza",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 6,
+    "data": "01/11/2026",
+    "ora": "17:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Siaz Basket Piazza Armerina",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 7,
+    "data": "08/11/2026",
+    "ora": "18:00",
+    "casa": "Logiman Orzinuovi",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "PalaBertocchi - Orzinuovi",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 8,
+    "data": "11/11/2026",
+    "ora": "20:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Rucker San Vendemiano",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 9,
+    "data": "15/11/2026",
+    "ora": "18:00",
+    "casa": "UCC Assigeco Piacenza",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "PalaBanca - Piacenza",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 10,
+    "data": "22/11/2026",
+    "ora": "17:00",
+    "casa": "Myenergy Reggio Calabria",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "PalaCalafiore – Reggio Calabria",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 11,
+    "data": "28/11/2026",
+    "ora": "20:30",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Adamant Ferrara",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 12,
+    "data": "06/12/2026",
+    "ora": "18:00",
+    "casa": "Infodrive Capo d'Orlando",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "PalaFantozzi",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 13,
+    "data": "13/12/2026",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Paffoni Fulgor Basket Omegna",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 14,
+    "data": "16/12/2026",
+    "ora": "20:30",
+    "casa": "TAV Treviglio Brianza Basket",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "PalaFacchetti - Treviglio",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 15,
+    "data": "20/12/2026",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "LuxArm Lumezzane",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 16,
+    "data": "30/12/2026",
+    "ora": "20:30",
+    "casa": "LTC Group Sangiorgese Basket",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "PalaBertelli - San Giorgio su Legnano",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 17,
+    "data": "03/01/2027",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Andrea Costa Imola",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 18,
+    "data": "09/01/2027",
+    "ora": "20:45",
+    "casa": "Rimadesio Desio",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "Pala FitLine - Desio",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 19,
+    "data": "17/01/2027",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Fiorenzuola Bees",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 20,
+    "data": "20/01/2027",
+    "ora": "20:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Infodrive Capo d'Orlando",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 21,
+    "data": "23/01/2027",
+    "ora": "21:00",
+    "casa": "Paffoni Fulgor Basket Omegna",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "PalaCipir di Gravellona",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 22,
+    "data": "31/01/2027",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "UCC Assigeco Piacenza",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 23,
+    "data": "07/02/2027",
+    "ora": "18:00",
+    "casa": "Moncada Energy Agrigento",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "PalaMoncada - Porto Empedocle",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 24,
+    "data": "14/02/2027",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "LTC Group Sangiorgese Basket",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 25,
+    "data": "21/02/2027",
+    "ora": "18:00",
+    "casa": "LuxArm Lumezzane",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "Pala A2A - Lumezzane",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 26,
+    "data": "28/02/2027",
+    "ora": "18:00",
+    "casa": "Andrea Costa Imola",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "PalaRuggi - Imola",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 27,
+    "data": "07/03/2027",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Myenergy Reggio Calabria",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 28,
+    "data": "21/03/2027",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "SAE Scientifica-Soevis Legnano Knights",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 29,
+    "data": "27/03/2027",
+    "ora": "20:30",
+    "casa": "Adamant Ferrara",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "Giuseppe Bondi Arena - Ferrara",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 30,
+    "data": "04/04/2027",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "S4 Energia Vicenza",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 31,
+    "data": "07/04/2027",
+    "ora": "20:30",
+    "casa": "Rucker San Vendemiano",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "Prealpi Sanbiagio Arena - Conegliano",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 32,
+    "data": "11/04/2027",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "Logiman Orzinuovi",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 33,
+    "data": "18/04/2027",
+    "ora": "17:00",
+    "casa": "Siaz Basket Piazza Armerina",
+    "ospite": "A2A Leonessa Brescia",
+    "impianto": "Palasport Provinciale - Piazza Armerina",
+    "risultato": null,
+    "cronaca_url": null
+  },
+  {
+    "giornata": 34,
+    "data": "25/04/2027",
+    "ora": "18:00",
+    "casa": "A2A Leonessa Brescia",
+    "ospite": "TAV Treviglio Brianza Basket",
+    "impianto": "PalaLeonessa A2A",
+    "risultato": null,
+    "cronaca_url": null
+  }
+]
