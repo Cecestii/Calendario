@@ -2,8 +2,9 @@ name: Aggiorna Calendario Leonessa
 
 on:
   schedule:
-    - cron: '0 8 * * 1'
-    - cron: '0 12 * * 4'
+    # Gira tutti i giorni alle 18:30 UTC (20:30 in Italia)
+    # Se non ci sono novità sul sito non fa nessun commit, ma appena escono risultati o cambi orario li prende subito
+    - cron: '00 12 * * *'
   workflow_dispatch:
 
 permissions:
