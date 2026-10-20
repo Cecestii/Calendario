@@ -1,13 +1,17 @@
 import re
 import json
 import uuid
+import time
 from datetime import datetime, timedelta
 import requests
 from bs4 import BeautifulSoup
 
-URL = "https://www.leonessa-brescia.it/calendario-partite-serie-b-nazionale-2026-2027/"
+# Il parametro ?t=... forza il bypass della cache CDN del sito WordPress
+URL = f"https://www.leonessa-brescia.it/calendario-partite-serie-b-nazionale-2026-2027/?nocache={int(time.time())}"
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "Cache-Control": "no-cache, no-store, must-revalidate",
+    "Pragma": "no-cache"
 }
 
 MONTHS_IT = {
@@ -72,6 +76,10 @@ def fetch_matches():
         month = MONTHS_IT[d_match.group(2)][0]
         year = d_match.group(3)
         
+        punteggio_el = next_box.select_one(".lb-prg__punteggio")
+        punteggio = punteggio_el.get_text(strip=True) if punteggio_el else "vs"
+        risultato = None if punteggio == "vs" else punteggio
+
         matches[g_num] = {
             "giornata": g_num,
             "data": f"{day}/{month}/{year}",
@@ -79,7 +87,7 @@ def fetch_matches():
             "casa": teams[0],
             "ospite": teams[1],
             "impianto": parts[2],
-            "risultato": None,
+            "risultato": risultato,
             "cronaca_url": None
         }
 
@@ -128,7 +136,8 @@ def generate_files(matches):
         "CALSCALE:GREGORIAN",
         "X-WR-CALNAME:Leonessa Brescia 26/27"
     ]
-    dtstamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+    # Usiamo un DTSTAMP statico legato ai dati così Git fa commit solo se cambiano davvero orari o risultati
+    dtstamp = "20260901T000000Z"
 
     for m in matches:
         g = m["giornata"]
