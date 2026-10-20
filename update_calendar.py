@@ -160,16 +160,11 @@ def generate_files(matches):
     # Usiamo un DTSTAMP statico legato ai dati così Git fa commit solo se cambiano davvero orari o risultati
     dtstamp = "20260901T000000Z"
 
-    for m in matches:
-        g = m["giornata"]
-        dt_start = datetime.strptime(f"{m['data']} {m['ora']}", "%d/%m/%Y %H:%M")
-        dt_end = dt_start + timedelta(hours=2)
-        
-        uid = EXISTING_UIDS.get(g, f"{uuid.uuid5(uuid.NAMESPACE_DNS, f'leonessa-26-27-g{g}')}@leonessabrescia.it")
-        
-        summary = f"{m['casa']} - {m['ospite']}"
+    summary = f"{m['casa']} - {m['ospite']}"
+        seq = 0
         if m["risultato"]:
             summary += f" ({m['risultato']})"
+            seq = 1  # Forza i client calendario a ricalcolare l'evento appena esce il punteggio
             
         desc = f"Giornata {g} - Serie B Nazionale 2026/27"
         if m["cronaca_url"]:
@@ -178,6 +173,7 @@ def generate_files(matches):
         ical.extend([
             "BEGIN:VEVENT",
             f"UID:{uid}",
+            f"SEQUENCE:{seq}",
             f"DTSTAMP:{dtstamp}",
             f"DTSTART;TZID=Europe/Rome:{dt_start.strftime('%Y%m%dT%H%M%S')}",
             f"DTEND;TZID=Europe/Rome:{dt_end.strftime('%Y%m%dT%H%M%S')}",
