@@ -59,9 +59,25 @@ EXISTING_UIDS = {
 }
 
 def fetch_matches():
-    resp = requests.get(URL, headers=HEADERS, timeout=15)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
+    # Proviamo prima dalla REST API ufficiale di WordPress (pagina ID 3442), che bypassa la cache HTML statica
+    api_url = f"https://www.leonessa-brescia.it/wp-json/wp/v2/pages/3442?_={int(time.time())}"
+    html_content = None
+    
+    try:
+        r_api = requests.get(api_url, headers=HEADERS, timeout=15)
+        if r_api.status_code == 200 and "content" in r_api.json():
+            html_content = r_api.json()["content"]["rendered"]
+            print(f"[DEBUG] Dati letti da WP REST API (Modified: {r_api.json().get('modified')})")
+    except Exception as e:
+        print(f"[DEBUG] WP REST API non disponibile ({e}), passo all'HTML diretto...")
+
+    if not html_content:
+        resp = requests.get(URL, headers=HEADERS, timeout=15)
+        resp.raise_for_status()
+        html_content = resp.text
+        print("[DEBUG] Dati letti da pagina HTML standard")
+
+    soup = BeautifulSoup(html_content, "html.parser")
     matches = {}
 
     next_box = soup.select_one("article.lb-prg-next")
@@ -76,9 +92,11 @@ def fetch_matches():
         month = MONTHS_IT[d_match.group(2)][0]
         year = d_match.group(3)
         
-        punteggio_el = next_box.select_one(".lb-prg__punteggio")
+        punteggio_el = next_box.select_one(".lb-prg__punteggio, .lb-prg-next__vs")
         punteggio = punteggio_el.get_text(strip=True) if punteggio_el else "vs"
-        risultato = None if punteggio == "vs" else punteggio
+        risultato = None if punteggio.lower() == "vs" else punteggio
+
+        print(f"[DEBUG] Box Prossima Partita -> Giornata {g_num}: {teams[0]} vs {teams[1]} | Punteggio letto: {punteggio}")
 
         matches[g_num] = {
             "giornata": g_num,
@@ -107,10 +125,13 @@ def fetch_matches():
         
         punteggio_el = row.select_one(".lb-prg__punteggio")
         punteggio = punteggio_el.get_text(strip=True) if punteggio_el else "vs"
-        risultato = None if punteggio == "vs" else punteggio
+        risultato = None if punteggio.lower() == "vs" else punteggio
         
         cronaca_el = row.select_one("a.lb-prg-riga__cronaca")
         cronaca_url = cronaca_el["href"] if cronaca_el else None
+
+        if risultato:
+            print(f"[DEBUG] Partita giocata trovata -> Giornata {g_num}: {casa} - {ospite} ({risultato})")
 
         matches[g_num] = {
             "giornata": g_num,
