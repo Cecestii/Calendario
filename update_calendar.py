@@ -160,7 +160,14 @@ def generate_files(matches):
     # Usiamo un DTSTAMP statico legato ai dati così Git fa commit solo se cambiano davvero orari o risultati
     dtstamp = "20260901T000000Z"
 
-    summary = f"{m['casa']} - {m['ospite']}"
+    for m in matches:
+        g = m["giornata"]
+        dt_start = datetime.strptime(f"{m['data']} {m['ora']}", "%d/%m/%Y %H:%M")
+        dt_end = dt_start + timedelta(hours=2)
+        
+        uid = EXISTING_UIDS.get(g, f"{uuid.uuid5(uuid.NAMESPACE_DNS, f'leonessa-26-27-g{g}')}@leonessabrescia.it")
+        
+        summary = f"{m['casa']} - {m['ospite']}"
         seq = 0
         if m["risultato"]:
             summary += f" ({m['risultato']})"
