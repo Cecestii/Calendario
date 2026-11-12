@@ -75,11 +75,11 @@ DESCRIPTION:Giornata 7 - Serie B Nazionale 2026/27\nCronaca: https://www.leoness
 END:VEVENT
 BEGIN:VEVENT
 UID:f0d24954-2fc2-4053-8737-a9be32714de4@leonessabrescia.it
-SEQUENCE:0
+SEQUENCE:1
 DTSTAMP:20260901T000000Z
 DTSTART;TZID=Europe/Rome:20261111T200000
 DTEND;TZID=Europe/Rome:20261111T220000
-SUMMARY:A2A Leonessa Brescia - Rucker San Vendemiano
+SUMMARY:A2A Leonessa Brescia - Rucker San Vendemiano (72–69)
 LOCATION:PalaLeonessa A2A
 DESCRIPTION:Giornata 8 - Serie B Nazionale 2026/27
 END:VEVENT
