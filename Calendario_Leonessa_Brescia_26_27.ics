@@ -81,7 +81,7 @@ DTSTART;TZID=Europe/Rome:20261111T200000
 DTEND;TZID=Europe/Rome:20261111T220000
 SUMMARY:A2A Leonessa Brescia - Rucker San Vendemiano (72–69)
 LOCATION:PalaLeonessa A2A
-DESCRIPTION:Giornata 8 - Serie B Nazionale 2026/27
+DESCRIPTION:Giornata 8 - Serie B Nazionale 2026/27\nCronaca: https://www.leonessa-brescia.it/news/report-brescia-san-vendemiano-serie-b-nazionale-2026-2027/
 END:VEVENT
 BEGIN:VEVENT
 UID:aa6bf4ba-ec0f-4117-a9ed-b58fc58c5d79@leonessabrescia.it

@@ -6,19 +6,20 @@ from datetime import datetime, timedelta
 import requests
 from bs4 import BeautifulSoup
 
-# Il parametro ?t=... forza il bypass della cache CDN del sito WordPress
-URL = f"https://www.leonessa-brescia.it/calendario-partite-serie-b-nazionale-2026-2027/?nocache={int(time.time())}"
+BASE_URL = "https://www.leonessa-brescia.it/calendario-partite-serie-b-nazionale-2026-2027/"
+API_URL = "https://www.leonessa-brescia.it/wp-json/wp/v2/pages/3442"
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-    "Cache-Control": "no-cache, no-store, must-revalidate",
-    "Pragma": "no-cache"
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
 }
 
 MONTHS_IT = {
     'Set': ('09', '2026'), 'Ott': ('10', '2026'), 'Nov': ('11', '2026'), 'Dic': ('12', '2026'),
     'Gen': ('01', '2027'), 'Feb': ('02', '2027'), 'Mar': ('03', '2027'), 'Apr': ('04', '2027'),
+    'Mag': ('05', '2027'), 'Giu': ('06', '2027'),
     'Settembre': ('09', '2026'), 'Ottobre': ('10', '2026'), 'Novembre': ('11', '2026'), 'Dicembre': ('12', '2026'),
-    'Gennaio': ('01', '2027'), 'Febbraio': ('02', '2027'), 'Marzo': ('03', '2027'), 'Aprile': ('04', '2027')
+    'Gennaio': ('01', '2027'), 'Febbraio': ('02', '2027'), 'Marzo': ('03', '2027'), 'Aprile': ('04', '2027'),
+    'Maggio': ('05', '2027'), 'Giugno': ('06', '2027')
 }
 
 EXISTING_UIDS = {
@@ -59,23 +60,41 @@ EXISTING_UIDS = {
 }
 
 def fetch_matches():
-    # Proviamo prima dalla REST API ufficiale di WordPress (pagina ID 3442), che bypassa la cache HTML statica
-    api_url = f"https://www.leonessa-brescia.it/wp-json/wp/v2/pages/3442?_={int(time.time())}"
+    sources = [
+        ("WP REST API", f"{API_URL}?_={int(time.time())}", 6, True),
+        ("HTML (nocache)", f"{BASE_URL}?nocache={int(time.time())}", 6, False),
+        ("HTML (standard)", BASE_URL, 15, False),
+    ]
+
     html_content = None
-    
-    try:
-        r_api = requests.get(api_url, headers=HEADERS, timeout=15)
-        if r_api.status_code == 200 and "content" in r_api.json():
-            html_content = r_api.json()["content"]["rendered"]
-            print(f"[DEBUG] Dati letti da WP REST API (Modified: {r_api.json().get('modified')})")
-    except Exception as e:
-        print(f"[DEBUG] WP REST API non disponibile ({e}), passo all'HTML diretto...")
+    session = requests.Session()
+
+    for name, url, timeout, is_json in sources:
+        try:
+            print(f"[DEBUG] Tentativo lettura da {name}...")
+            r = session.get(url, headers=HEADERS, timeout=timeout)
+            if r.status_code == 200:
+                if is_json:
+                    data = r.json()
+                    if "content" in data and "rendered" in data["content"]:
+                        html_content = data["content"]["rendered"]
+                        print(f"[DEBUG] Dati letti con successo da {name} (Modified: {data.get('modified')})")
+                        break
+                else:
+                    if "lb-prg" in r.text:
+                        html_content = r.text
+                        print(f"[DEBUG] Dati letti con successo da {name}")
+                        break
+        except Exception as e:
+            print(f"[DEBUG] {name} non disponibile ({type(e).__name__}), passo alla sorgente successiva...")
 
     if not html_content:
-        resp = requests.get(URL, headers=HEADERS, timeout=15)
+        print("[DEBUG] Fallback finale su pagina standard...")
+        time.sleep(1)
+        resp = session.get(BASE_URL, headers=HEADERS, timeout=20)
         resp.raise_for_status()
         html_content = resp.text
-        print("[DEBUG] Dati letti da pagina HTML standard")
+        print("[DEBUG] Dati letti da fallback finale")
 
     soup = BeautifulSoup(html_content, "html.parser")
     matches = {}
