@@ -85,11 +85,11 @@ DESCRIPTION:Giornata 8 - Serie B Nazionale 2026/27\nCronaca: https://www.leoness
 END:VEVENT
 BEGIN:VEVENT
 UID:aa6bf4ba-ec0f-4117-a9ed-b58fc58c5d79@leonessabrescia.it
-SEQUENCE:0
+SEQUENCE:1
 DTSTAMP:20260901T000000Z
 DTSTART;TZID=Europe/Rome:20261115T180000
 DTEND;TZID=Europe/Rome:20261115T200000
-SUMMARY:UCC Assigeco Piacenza - A2A Leonessa Brescia
+SUMMARY:UCC Assigeco Piacenza - A2A Leonessa Brescia (81–92)
 LOCATION:PalaBanca - Piacenza
 DESCRIPTION:Giornata 9 - Serie B Nazionale 2026/27
 END:VEVENT
