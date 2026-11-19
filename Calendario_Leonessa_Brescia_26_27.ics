@@ -91,7 +91,7 @@ DTSTART;TZID=Europe/Rome:20261115T180000
 DTEND;TZID=Europe/Rome:20261115T200000
 SUMMARY:UCC Assigeco Piacenza - A2A Leonessa Brescia (81–92)
 LOCATION:PalaBanca - Piacenza
-DESCRIPTION:Giornata 9 - Serie B Nazionale 2026/27
+DESCRIPTION:Giornata 9 - Serie B Nazionale 2026/27\nCronaca: https://www.leonessa-brescia.it/news/report-piacenza-brescia-serie-b-nazionale-2026-2027/
 END:VEVENT
 BEGIN:VEVENT
 UID:c3b6b285-ce08-4065-9020-dfe3b790d53a@leonessabrescia.it
