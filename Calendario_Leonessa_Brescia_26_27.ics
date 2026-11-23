@@ -95,11 +95,11 @@ DESCRIPTION:Giornata 9 - Serie B Nazionale 2026/27\nCronaca: https://www.leoness
 END:VEVENT
 BEGIN:VEVENT
 UID:c3b6b285-ce08-4065-9020-dfe3b790d53a@leonessabrescia.it
-SEQUENCE:0
+SEQUENCE:1
 DTSTAMP:20260901T000000Z
 DTSTART;TZID=Europe/Rome:20261122T170000
 DTEND;TZID=Europe/Rome:20261122T190000
-SUMMARY:Myenergy Reggio Calabria - A2A Leonessa Brescia
+SUMMARY:Myenergy Reggio Calabria - A2A Leonessa Brescia (65–68)
 LOCATION:PalaCalafiore – Reggio Calabria
 DESCRIPTION:Giornata 10 - Serie B Nazionale 2026/27
 END:VEVENT
