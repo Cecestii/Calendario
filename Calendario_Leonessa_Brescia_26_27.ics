@@ -101,7 +101,7 @@ DTSTART;TZID=Europe/Rome:20261122T170000
 DTEND;TZID=Europe/Rome:20261122T190000
 SUMMARY:Myenergy Reggio Calabria - A2A Leonessa Brescia (65–68)
 LOCATION:PalaCalafiore – Reggio Calabria
-DESCRIPTION:Giornata 10 - Serie B Nazionale 2026/27
+DESCRIPTION:Giornata 10 - Serie B Nazionale 2026/27\nCronaca: https://www.leonessa-brescia.it/news/report-reggio-calabria-brescia-serie-b-nazionale-2026-2027/
 END:VEVENT
 BEGIN:VEVENT
 UID:39d26bd9-312c-48d6-b594-8c698fd6cc72@leonessabrescia.it
@@ -117,8 +117,8 @@ BEGIN:VEVENT
 UID:b2e8f9b0-93cb-4231-8956-02ddd4d432c2@leonessabrescia.it
 SEQUENCE:0
 DTSTAMP:20260901T000000Z
-DTSTART;TZID=Europe/Rome:20261206T180000
-DTEND;TZID=Europe/Rome:20261206T200000
+DTSTART;TZID=Europe/Rome:20261206T173000
+DTEND;TZID=Europe/Rome:20261206T193000
 SUMMARY:Infodrive Capo d'Orlando - A2A Leonessa Brescia
 LOCATION:PalaFantozzi
 DESCRIPTION:Giornata 12 - Serie B Nazionale 2026/27
